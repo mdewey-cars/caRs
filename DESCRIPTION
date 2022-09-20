@@ -12,3 +12,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 URL: https://github.com/mdewey-cars/caRs
 BugReports: https://github.com/mdewey-cars/caRs/issues
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    ggplot2
