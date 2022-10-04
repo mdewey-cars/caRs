@@ -9,8 +9,8 @@
 #'
 #' @export
 cars_palettes <- list(
-  cars_greyscale = c('white' = '#ffffff', 'lighter_grey' = '#e6e6e6', 'light_grey' = '#bdbdbd', 'dark_grey' = '#767676', 'black' = '#212121'),
-  cars = c('brand' = '#532380', 'content_link' = '#bb00cc', 'accent' = '#00bfde', 'warning' = '#dfa20b', 'success' = '#93a533')
+  cars_greyscale = c('#ffffff', '#e6e6e6', '#bdbdbd', '#767676', '#212121'),
+  cars = c('#532380', '#bb00cc', '#00bfde', '#dfa20b', '#93a533')
 )
 
 
