@@ -1,0 +1,64 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# caRs
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+A package to streamline processes done in R throughout the CARS family. Contains utilities for Site Analytics, Data Science, and anyone else interested in using 
+R to accomplish their work. 
+
+Please do not share any resources from this package with anyone external to CARS. Certain functions are designed to make your life easier as an employee, which involves the use of resources that would be considered sensitive information. This GitHub repository is private and to be shared only with individuals whose business need permits or encourages the use of R. 
+
+## Installation
+
+You can install the development version of caRs from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("mdewey-cars/caRs")
+```
+
+However, certain CARS-issued computers have had issues with this method in the past
+due to incompatability with downloading over HTTPS. In that case, download the zip
+file from the repository and install locally with:
+
+```r
+# install.packages("devtools")
+remotes::install_local('{PATH TO THE ZIP FILE}/caRs.zip')
+```
+## Use Cases
+`caRs` is designed to streamline and simplify processes that employees thruoghout
+the CARS organization may use in their day-to-day operations. Broadly, there are 
+four different categories of functions contained within this package:
+
+```{r use cases, echo = F}
+use_case_tribble = dplyr::tribble(
+  ~Category, ~`Function`, ~Description,
+  "Graphics", "theme_cars", "A ggplot2 `theme` object designed to standardize graph outputs within the organization.",
+  "Graphics", "palette_cars", "A function which produces a color palette to be used in visualizations, taking inspiration from the color schemes of CARS companies.",
+  "External Connections", "setup_adobe, connect_adobe", "Functions to walk users through the process of setting up the adobeanalyticsr package, and connecting to it regularly",
+  "External Connections", "connect_redshift", "A function to walk users through the process of connecting to redshift",
+  "Forecasting", "forecast_dlm_time_varying", "An extension to the `dlm` package which allows for the forecasting of time series with time-varying observations",
+  "Data Science", "TBD", "TBD"
+)
+
+knitr::kable(use_case_tribble)
+
+```
+
+
+# This Section is Under Construction
