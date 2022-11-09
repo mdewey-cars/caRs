@@ -16,20 +16,26 @@
 #' @examples
 setup_redshift <- function(credentials = T) {
   tryCatch(
-    keyring::key_get('redshift_user_id'),
+    keyring::key_get(
+      'RStudio Keyring Secrets',
+      'redshift_username'),
     error = function(e) {
      credentials <<- F
     }
   )
   if (!credentials) {
-    rstudioapi::askForSecret('redshift_user_id',
-                             message = 'Enter your Redshift User ID \n
-                      All values entered will only be saved locally',
-                             title = paste("Redshift Username"))
-    rstudioapi::askForSecret('redshift_password',
-                             message = 'Enter your Redshift Password \n
-                      All values entered will only be saved locally',
-                             title = paste("Redshift Password"))
+    rstudioapi::askForSecret(
+      'redshift_username',
+       message = paste('Enter your Redshift User ID',
+                       'Click "Remember With Keyring" to save your ID locally',
+                       sep = '\n'),
+      title = paste("Redshift Username"))
+    rstudioapi::askForSecret(
+      'redshift_password',
+      message = paste('Enter your Redshift Password',
+                      'Click "Remember With Keyring" to save your ID locally',
+                      sep = '\n'),
+      title = paste("Redshift Password"))
   }
 
   # finally, we setup a con object
@@ -37,7 +43,7 @@ setup_redshift <- function(credentials = T) {
             Driver       = "Amazon Redshift (x64)",
             servername   = "dw.data-prod.cars.com",
             database     = "dw",
-            UID          = keyring::key_get('redshift_user_id'),
-            PWD          = keyring::key_get('redshift_password'),
+            UID          = keyring::key_get('RStudio Keyring Secrets', 'redshift_username'),
+            PWD          = keyring::key_get('RStudio Keyring Secrets', 'redshift_password'),
             Port         = 5439)
 }
