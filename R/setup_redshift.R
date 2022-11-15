@@ -7,7 +7,7 @@
 #' This function does a different thing depending on whether or not this is your
 #' first time running the function. If it is, it will prompt you for login
 #' information. You can manually control whether you want to re-enter credentials
-#' with the `credentials` function argument, for example when you change these.
+#' with the `credentials` function argument, for example when you change your password
 #'
 #'
 #' @return An object named `con` to be used with calls to `DBGetQuery`
